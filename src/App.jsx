@@ -3,7 +3,7 @@ import { fetchDatafromApi } from './utility/api'
 // import './App.css'
 // for using redux store
 import { useDispatch,useSelector } from 'react-redux'
-import { getApiConfiguration } from './store/homeSlice'
+import { getApiConfiguration, getGenres } from './store/homeSlice'
 //for componets and pages
 import Home from './pages/home/Home'
 import SearchResult from './pages/searchResult/SearchResult'
@@ -45,8 +45,30 @@ function App() {
 
 useEffect(()=>{
   fetchApiConfig()
+  genresCall()
 },[])
 
+
+// api calling for genres
+// in genere we have to call two api at the same time so we have to use the pomises.all method and in this method we make a pomises array .
+
+const genresCall = async()=>{
+      let promises = []
+      let endpoints = ['tv','movie']
+      let genresAll = {}
+
+      endpoints.forEach((endPt)=>{
+        promises.push(fetchDatafromApi(`/genre/${endPt}/list`))
+      });
+      const data = await Promise.all(promises);
+      console.log(data)
+
+      data.map(({genres})=>{
+        return genres.map((item)=>(genresAll[item.id] = item));
+      });
+      console.log(genresAll)
+     dispatch(getGenres(genresAll))
+}
   return (
     <>
     <Header/>
