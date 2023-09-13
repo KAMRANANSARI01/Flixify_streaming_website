@@ -1,4 +1,5 @@
 @import "../../mixins.scss";
+
 .carousel {
     margin-bottom: 50px;
     .contentWrapper {
@@ -30,7 +31,7 @@
     .carouselLeftNav {
         left: 30px;
     }
-    .carouselRightNav {
+    .carouselRighttNav {
         right: 30px;
     }
     .loadingSkeleton {
