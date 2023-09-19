@@ -48,8 +48,8 @@ const Header = () => {
   return (
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
-        <div className="logo">
-          <h1>FLIXIFY</h1>
+        <div className="logo" onClick={()=>navigate("/")}>
+          <h1 onClick={()=>navigate("/")}>FLIXIFY</h1>
         </div>
         <ul className="menuItems">
           <li className="menuItem" onClick={() => navigationHandler("movie")}>
