@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { fetchDatafromApi } from './utility/api'
+import { fetchDatafromApi } from './utility/Api'
 // import './App.css'
 // for using redux store
 import { useDispatch,useSelector } from 'react-redux'
@@ -30,7 +30,7 @@ function App() {
   
 
   const fetchApiConfig = () =>{
-     fetchDatafromApi("/configuration")
+    fetchDatafromApi("/configuration")
       .then((res)=>{
         console.log(res);
         const url ={

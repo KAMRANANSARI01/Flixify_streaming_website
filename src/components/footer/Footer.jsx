@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  FaFacebookF,
   FaInstagram,
   FaTwitter,
   FaLinkedin,
+  FaGithub
 } from "react-icons/fa";
 
 import ContentWrapper from "../../components/contenWrapper/ContentWrapper";
@@ -11,6 +11,8 @@ import ContentWrapper from "../../components/contenWrapper/ContentWrapper";
 import "./style.scss";
 
 const Footer = () => {
+const linkdinUrl = "https://www.linkedin.com/in/kamranansari01/"
+const gtihubUrl = "https://github.com/KAMRANANSARI01"
   return (
     <footer className="footer">
       <ContentWrapper>
@@ -30,16 +32,20 @@ const Footer = () => {
         </div>
         <div className="socialIcons">
           <span className="icon">
-            <FaFacebookF />
+            <FaTwitter />
           </span>
           <span className="icon">
             <FaInstagram />
           </span>
           <span className="icon">
-            <FaTwitter />
+            <FaGithub  onClick={()=>{
+              window.open(gtihubUrl,'_blank')
+            }} />
           </span>
           <span className="icon">
-            <FaLinkedin />
+            <FaLinkedin onClick={()=>{
+              window.open(linkdinUrl,'_blank')
+            }} />
           </span>
         </div>
       </ContentWrapper>
