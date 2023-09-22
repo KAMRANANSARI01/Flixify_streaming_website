@@ -46,7 +46,7 @@ const Explore = () => {
   };
 
   const fetchNextPageData = () => {
-    fetchDataFromApi(`/discover/${mediaType}?page=${pageNum}`, filters).then(
+    fetchDatafromApi(`/discover/${mediaType}?page=${pageNum}`, filters).then(
       (res) => {
         if (data?.results) {
           setData({
